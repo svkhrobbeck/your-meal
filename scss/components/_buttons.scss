@@ -12,9 +12,13 @@
 
   &--dark-orange {
     @extend .button;
-
     background-color: $dark-orange;
     color: $white;
+  }
+
+  &--light {
+    @extend .button;
+    background-color: $light;
   }
 
   &:hover {
