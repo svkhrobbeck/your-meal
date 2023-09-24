@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Regular.woff2") format("woff2"), url("../fonts/Nunito-Regular.woff") format("woff");
+  src: url("../assets/fonts/Nunito-Regular.woff2") format("woff2"), url("../assets/fonts/Nunito-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-ExtraBold.woff2") format("woff2"), url("../fonts/Nunito-ExtraBold.woff") format("woff");
+  src: url("../assets/fonts/Nunito-ExtraBold.woff2") format("woff2"), url("../assets/fonts/Nunito-ExtraBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-SemiBold.woff2") format("woff2"), url("../fonts/Nunito-SemiBold.woff") format("woff");
+  src: url("../assets/fonts/Nunito-SemiBold.woff2") format("woff2"), url("../assets/fonts/Nunito-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -365,32 +365,9 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #000;
-  background-color: #fff;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-}
-
-@media only screen and (min-width: 768px) {
-  ::-webkit-scrollbar {
-    width: 12px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  ::-webkit-scrollbar-track {
-    border-radius: 8px;
-    box-shadow: inset 0 0 5px grey;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  ::-webkit-scrollbar-thumb {
-    background: rgb(110, 110, 110);
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(110, 110, 110);
-  }
 }
 
 .visually-hidden {
@@ -437,7 +414,7 @@ body {
 .hero {
   background-color: #ffab08;
   position: relative;
-  margin-bottom: 180px;
+  margin-bottom: 220px;
 }
 .hero::after {
   content: "";
@@ -447,7 +424,7 @@ body {
   left: 0;
   width: 100%;
   height: 180px;
-  background: url("../../images/hero-circle.svg") no-repeat top;
+  background: url("../assets/images/hero-circle.svg") no-repeat top;
   background-size: 100% 180px;
 }
 
@@ -484,5 +461,57 @@ body {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
+  line-height: normal;
+}
+
+.categories {
+  padding: 0 75px;
+}
+
+.categories__container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: flex-start;
+  overflow: auto;
+  padding: 10px 0;
+}
+@media only screen and (min-width: 768px) {
+  .categories__container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+  }
+  .categories__container::-webkit-scrollbar {
+    background-color: transparent;
+    height: 4px;
+  }
+  .categories__container::-webkit-scrollbar-thumb {
+    background-color: #ff7020;
+  }
+}
+
+.category {
+  background-color: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.07);
+}
+.category.category--active {
+  background-color: #ffab08;
+}
+
+.category__image {
+  max-width: 24px;
+  width: 100%;
+  height: auto;
+}
+
+.category__text {
+  font-size: 16px;
+  font-weight: 400;
   line-height: normal;
 }/*# sourceMappingURL=main.css.map */
