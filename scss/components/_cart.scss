@@ -1,8 +1,14 @@
 .cart {
+  position: sticky;
+  top: 20px;
+  margin-top: 84px;
+  flex-shrink: 0;
   background-color: $white;
   max-width: 300px;
+  width: 100%;
   padding: 24px 16px;
   border-radius: 18px;
+  box-shadow: $shadow;
 }
 
 .cart__header {
@@ -133,9 +139,6 @@
 .cart__total-price {
   margin: 0;
   font-size: inherit;
-}
-
-.cart__order-btn {
 }
 
 .cart__order-text {
