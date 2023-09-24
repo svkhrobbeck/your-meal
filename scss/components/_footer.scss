@@ -1,0 +1,90 @@
+.footer {
+  padding: 40px 0;
+}
+
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  margin-right: 30px;
+}
+
+.footer-logo__img {
+  max-width: 301px;
+  width: 100%;
+  height: auto;
+}
+
+// FOOTER ACTIONS
+.footer__actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 125px;
+}
+
+.footer__actions-text {
+  font-size: 24px;
+  line-height: 1;
+}
+
+// FOOTER CALL
+.footer__call {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__call-text {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.footer__call-link {
+  color: $black;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../../assets/icons/icon-phone.svg") no-repeat center / contain;
+    margin-right: 4px;
+  }
+}
+
+// FOOTER SOCIALS
+.footer__socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__socials-text {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.footer__socials-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__socials-link {
+  display: flex;
+}
+
+.footer__socials-icon {
+  max-width: 36px;
+  width: 100px;
+  height: auto;
+}
+
+.footer__copyright {
+  color: #000;
+  font-size: 12px;
+}

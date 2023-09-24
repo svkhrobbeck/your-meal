@@ -21,6 +21,10 @@ html {
   outline-offset: 3px;
 }
 
+ul {
+  margin: 0;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -31,7 +35,8 @@ body {
   height: 100%;
   font-family: $mainFontFamily;
   font-size: 16px;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: normal;
   color: $black;
   background-color: $lightBg;
   display: flex;
