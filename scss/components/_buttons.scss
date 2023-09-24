@@ -1,0 +1,27 @@
+.button {
+  border: none;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  background-color: transparent;
+  padding: 11px 32px;
+  border-radius: 12px;
+  transition: $transition;
+
+  &--dark-orange {
+    @extend .button;
+
+    background-color: $dark-orange;
+    color: $white;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
