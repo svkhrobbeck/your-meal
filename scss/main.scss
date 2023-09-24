@@ -2,7 +2,10 @@
 @import "mixins";
 @import "variables";
 @import "fonts";
-@import "common";
+@import "helpers/normalize";
+@import "general";
 @import "container";
 
-// BLOCKS
+// COMPONENTS
+@import "components/header";
+@import "components/hero";
