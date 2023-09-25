@@ -52,6 +52,10 @@
     grid-template-columns: auto auto;
     gap: 10px;
   }
+
+  @media only screen and (max-width: 330px) {
+    grid-template-columns: auto;
+  }
 }
 
 .menu-card {
@@ -73,8 +77,13 @@
     max-width: 190px;
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: $mobile) {
     max-width: 268px;
+  }
+
+  @media only screen and (max-width: 350px) {
+    max-width: none;
+    padding: 10px;
   }
 }
 
@@ -94,8 +103,12 @@
     max-width: 182px;
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: $mobile) {
     max-width: 260px;
+  }
+
+  @media only screen and (max-width: 350px) {
+    max-width: none;
   }
 }
 

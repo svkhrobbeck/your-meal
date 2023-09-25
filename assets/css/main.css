@@ -1098,6 +1098,11 @@ body {
     gap: 10px;
   }
 }
+@media only screen and (max-width: 330px) {
+  .menu__cards {
+    grid-template-columns: auto;
+  }
+}
 
 .menu-card {
   max-width: 300px;
@@ -1120,9 +1125,15 @@ body {
     max-width: 190px;
   }
 }
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 576px) {
   .menu-card {
     max-width: 268px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .menu-card {
+    max-width: none;
+    padding: 10px;
   }
 }
 
@@ -1144,9 +1155,14 @@ body {
     max-width: 182px;
   }
 }
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 576px) {
   .menu-card__image {
     max-width: 260px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .menu-card__image {
+    max-width: none;
   }
 }
 
