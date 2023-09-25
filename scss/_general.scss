@@ -41,6 +41,10 @@ body {
   background-color: $lightBg;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: $tablet) {
+    font-size: 12px;
+  }
 }
 
 // VISUALLY HIDDEN
