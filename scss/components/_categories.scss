@@ -71,6 +71,45 @@
     background-color: $orange;
   }
 
+  &--disabled {
+    background-color: rgba($color: $white, $alpha: 0.4);
+    color: rgba($color: $black, $alpha: 0.7);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 2.3px;
+      background-color: rgba(227, 11, 55, 0.8);
+
+      @media only screen and (max-width: $tablet-l) {
+        width: 90px;
+        height: 2px;
+      }
+
+      @media only screen and (max-width: $tablet) {
+        width: 80px;
+      }
+
+      @media only screen and (max-width: $mobile) {
+        width: 72px;
+      }
+    }
+
+    &::before {
+      transform: rotate(28deg);
+    }
+
+    &::after {
+      transform: rotate(-28deg);
+    }
+  }
+
   &:hover {
     border-color: $dark-orange;
   }

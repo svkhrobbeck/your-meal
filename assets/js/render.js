@@ -6,8 +6,12 @@ const renderCategories = (categories, activeIdx = 0) => {
   elMenuTitle.textContent = categories.find((_, i) => i === activeIdx).text;
 
   categories.forEach((category, idx) => {
+    const length = !!data.menu[category.data].length;
+
     elCategoriesWrapper.innerHTML += `
-    <div class="category ${idx === activeIdx ? "category--active" : ""}" data-idx=${idx} data-category=${category.data}>
+    <div class="category ${length ? "" : "category--disabled"} ${
+      idx === activeIdx ? "category--active" : ""
+    }" data-idx=${idx} ${length ? "data-category" : "data-empty-category"}=${category.data}>
       <img class="category__image" src=${category.icon} alt=${category.alt} />
       <span class="category__text">${category.text}</span>
     </div>
