@@ -5,7 +5,7 @@ const elLoader = document.getElementById("loader"),
   elMenuTitle = document.getElementById("menuTitle");
 
 // variables
-const selectedCategory = myLocalStorage.get("category");
+const selectedCategory = myLocalStorage.get("category") || "burgers";
 const selectedIndex = data.categories.findIndex(item => item.data === selectedCategory);
 
 // onCategoryClick
@@ -48,8 +48,8 @@ const onToggleToCartClick = e => {
   }
 };
 
-// countIncClick
-const countIncClick = e => {
+// onCountIncClick
+const onCountIncClick = e => {
   const el = e.target.closest("[data-count-inc]");
   if (!el) return;
 
@@ -63,8 +63,8 @@ const countIncClick = e => {
   renderCartItems(myLocalStorage.get("cart") || []);
 };
 
-// countDecClick
-const countDecClick = e => {
+// onCountDecClick
+const onCountDecClick = e => {
   const el = e.target.closest("[data-count-dec]");
   if (!el) return;
 
@@ -88,7 +88,7 @@ const countDecClick = e => {
 
 // called functions
 renderCategories(data.categories, selectedIndex);
-renderMenuCards(data.menu[selectedCategory || "burgers"]);
+renderMenuCards(data.menu[selectedCategory]);
 renderCartItems(myLocalStorage.get("cart") || []);
 const elCategoriesTop = getDistanceTop(elCategories);
 
@@ -106,9 +106,8 @@ window.addEventListener("scroll", () => {
 document.addEventListener("click", e => {
   onCategoryClick(e);
   onToggleToCartClick(e);
-
-  countIncClick(e);
-  countDecClick(e);
+  onCountIncClick(e);
+  onCountDecClick(e);
 
   // modal
   onAddModalOpenClick(e);
