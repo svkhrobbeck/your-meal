@@ -14,6 +14,14 @@
     background: url("../images/hero-circle.svg") no-repeat top;
     background-size: 100% 180px;
   }
+
+  @media only screen and (max-width: $tablet-l) {
+    margin-bottom: 150px;
+
+    &::after {
+      background-size: 100% 110px;
+    }
+  }
 }
 
 .hero__container {
@@ -47,7 +55,9 @@
 
 .hero__delivery-text {
   color: $white;
-  font-size: 16px;
-  font-weight: 600;
   line-height: normal;
+
+  &-inner {
+    font-weight: 600;
+  }
 }
