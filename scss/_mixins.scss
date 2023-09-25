@@ -4,3 +4,15 @@
   width: auto;
   height: auto;
 }
+
+@mixin mainTransitionHover {
+  transition: $transition;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

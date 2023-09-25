@@ -40,6 +40,8 @@
 }
 
 .category {
+  user-select: none;
+  cursor: pointer;
   background-color: $white;
   flex-shrink: 0;
   display: flex;

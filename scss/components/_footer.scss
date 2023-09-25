@@ -12,6 +12,7 @@
 .footer-logo {
   display: flex;
   margin-right: 30px;
+  @include mainTransitionHover;
 }
 
 .footer-logo__img {
@@ -56,6 +57,8 @@
     background: url("../icons/icon-phone.svg") no-repeat center / contain;
     margin-right: 4px;
   }
+
+  @include mainTransitionHover;
 }
 
 // FOOTER SOCIALS
@@ -77,6 +80,7 @@
 
 .footer__socials-link {
   display: flex;
+  @include mainTransitionHover;
 }
 
 .footer__socials-icon {
