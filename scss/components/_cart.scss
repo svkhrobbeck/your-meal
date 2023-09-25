@@ -20,6 +20,10 @@
     border-radius: 12px;
     max-width: 145px;
   }
+
+  @media only screen and (max-width: $mobile) {
+    max-width: none;
+  }
 }
 
 .cart__header {
@@ -86,12 +90,26 @@
     border-radius: 12px;
     box-shadow: $shadow;
   }
+
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    transform: scale(1);
+    display: none;
+  }
 }
 
 .cart {
   &:hover {
-    .cart__inner {
-      transform: scale(1);
+    @media only screen and (max-width: $tablet) {
+      .cart__inner {
+        transform: scale(1);
+      }
+    }
+
+    @media only screen and (max-width: $mobile) {
+      .cart__inner {
+        display: block;
+      }
     }
   }
 }
