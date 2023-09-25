@@ -642,6 +642,11 @@ body {
     gap: 12px;
   }
 }
+@media only screen and (max-width: 576px) {
+  .categories__container {
+    gap: 8px;
+  }
+}
 
 .category {
   -webkit-user-select: none;

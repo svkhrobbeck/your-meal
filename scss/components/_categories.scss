@@ -47,6 +47,10 @@
   @media only screen and (max-width: $tablet) {
     gap: 12px;
   }
+
+  @media only screen and (max-width: $mobile) {
+    gap: 8px;
+  }
 }
 
 .category {
