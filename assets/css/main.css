@@ -989,6 +989,9 @@ body {
   width: auto;
   height: auto;
 }
+.cart-count__dec--disabled {
+  color: rgba(0, 0, 0, 0.4);
+}
 
 .cart-count__input {
   border: none;

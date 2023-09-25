@@ -45,7 +45,7 @@ const renderCartItems = data => {
   const elCartList = document.getElementById("cartList"),
     elCartCount = document.getElementById("cartCount"),
     elTotalPrice = document.getElementById("cartTotalPrice"),
-    totalPrice = data.reduce((a, b) => a + parseInt(b.price), 0);
+    totalPrice = data.reduce((a, b) => a + parseInt(b.price) * b.count, 0);
 
   elCartList.innerHTML = "";
   elCartCount.textContent = data?.length;
@@ -69,7 +69,9 @@ const renderCartItems = data => {
         </div>
       </div>
       <div class="cart-count item-cart__count" data-cart-count=${item.id} data-type-cart=${item.data}>
-        <button class="cart-count__dec" data-count-dec>-</button>
+        <button ${item.count === 1 ? "disabled" : ""} class="cart-count__dec ${
+      item.count === 1 ? "cart-count__dec--disabled" : ""
+    }" data-count-dec>-</button>
         <input class="cart-count__input" type="number" value=${item.count} min="0" />
         <button class="cart-count__inc" data-count-inc>+</button>
       </div>
@@ -113,7 +115,9 @@ const renderAddModal = product => {
         </ul>
         <div class="add-modal__count-price-wrapper">
           <div class="cart-count add-modal__cart-count">
-            <button class="cart-count__dec" data-modal-dec=${product.id} data-modal-category=${product.data}>-</button>
+            <button ${product.count === 1 ? "disabled" : ""} class="cart-count__dec ${
+    product.count === 1 ? "cart-count__dec--disabled" : ""
+  }" data-modal-dec=${product.id} data-modal-category=${product.data}>-</button>
             <input class="cart-count__input" type="number" value=${product.count} min="0" />
             <button class="cart-count__inc" data-modal-inc=${product.id} data-modal-category=${product.data}>+</button>
           </div>

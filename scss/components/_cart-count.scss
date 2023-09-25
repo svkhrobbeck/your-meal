@@ -8,6 +8,10 @@
 
 .cart-count__dec {
   @include clearActions;
+
+  &--disabled {
+    color: rgba($color: $black, $alpha: .4);
+  }
 }
 
 .cart-count__input {
