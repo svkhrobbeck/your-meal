@@ -7,6 +7,7 @@
   padding: 24px 16px;
   border-radius: 18px;
   box-shadow: $shadow;
+  position: relative;
 
   @media only screen and (min-width: $tablet) {
     position: sticky;
@@ -26,6 +27,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  user-select: none;
+  margin-bottom: 12px;
+
+  &--mobile {
+    cursor: pointer;
+    margin-bottom: 0;
+
+    @media only screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
 }
 
 .cart__heading {
@@ -60,8 +72,28 @@
 }
 
 .cart__inner {
-  margin-top: 12px;
-  display: none;
+  @media only screen and (max-width: $tablet) {
+    transform: scale(0);
+    transform-origin: left top;
+    position: absolute;
+    padding: 10px 16px;
+    width: 300px;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    transition: $transition;
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: $shadow;
+  }
+}
+
+.cart {
+  &:hover {
+    .cart__inner {
+      transform: scale(1);
+    }
+  }
 }
 
 .cart__list {
