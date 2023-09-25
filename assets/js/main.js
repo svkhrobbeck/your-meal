@@ -43,6 +43,44 @@ const onAddToCartClick = e => {
   }
 };
 
+// countIncClick
+const countIncClick = e => {
+  const el = e.target.closest("[data-count-inc]");
+  if (!el) return;
+
+  const id = el.parentElement.dataset.cartCount;
+  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+
+  const product = localData.find(item => item.id === id) || {};
+  product.count += 1;
+
+  myLocalStorage.set("cart", localData);
+  renderCartItems(myLocalStorage.get("cart") || []);
+};
+
+// countDecClick
+const countDecClick = e => {
+  const el = e.target.closest("[data-count-dec]");
+  if (!el) return;
+
+  const id = el.parentElement.dataset.cartCount;
+  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+
+  const product = localData.find(item => item.id === id);
+  const idx = localData.findIndex(item => item.id === id);
+  if (product.count > 1) {
+    product.count -= 1;
+  }
+
+  console.log(product.count);
+  if (product.count < 1) {
+    localData.splice(idx, 1);
+  }
+
+  myLocalStorage.set("cart", localData);
+  renderCartItems(myLocalStorage.get("cart") || []);
+};
+
 // called functions
 renderCategories(data.categories, selectedIndex);
 renderMenuCards(data.menu[selectedCategory || "burgers"]);
@@ -62,7 +100,10 @@ window.addEventListener("scroll", () => {
 // click event
 document.addEventListener("click", e => {
   onCategoryClick(e);
-  onAddToCartClick(e);
+  onToggleToCartClick(e);
+
+  countIncClick(e);
+  countDecClick(e);
 
   // modal
   onAddModalOpenClick(e);
