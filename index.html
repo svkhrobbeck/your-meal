@@ -19,7 +19,7 @@
 
   <body>
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" id="header">
       <a class="logo header__logo" href="/">
         <img class="logo__pic" src="assets/images/logo.svg" alt="your meal logo" width="151" height="29" />
       </a>
@@ -29,7 +29,7 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="hero__container">
           <img
             class="hero__image"
@@ -64,10 +64,13 @@
         <div class="container foods__container">
           <!-- CART -->
           <section class="cart">
+            <!-- cart header -->
             <header class="cart__header">
               <h3 class="cart__heading">Корзина</h3>
               <span class="cart__count">4</span>
             </header>
+
+            <!-- cart list -->
             <ul class="cart__list">
               <li class="cart__item item-cart">
                 <div class="item-cart__product">
@@ -112,6 +115,8 @@
                 </div>
               </li>
             </ul>
+
+            <!-- cart footer -->
             <footer class="cart__footer">
               <div class="cart__total">
                 <p class="cart__total-text">Итого</p>
@@ -124,10 +129,12 @@
           <!-- /CART -->
 
           <!-- MENU -->
-          <section class="menu">
+          <section class="menu" id="menu">
             <h2 class="visually-hidden">Меню</h2>
             <h3 class="menu__title">Бургеры</h3>
-            <div class="menu__cards js-menu-cards"></div>
+
+            <!-- menu cards -->
+            <div class="menu__cards" id="menuCards"></div>
           </section>
           <!-- /MENU -->
         </div>
@@ -185,6 +192,8 @@
             </div>
           </div>
         </div>
+
+        <!-- footer copyright -->
         <p class="footer__copyright">© YourMeal, 2023</p>
       </div>
     </footer>
