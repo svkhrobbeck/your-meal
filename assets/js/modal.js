@@ -7,7 +7,7 @@ const onAddModalOpenClick = e => {
 
   const category = data.menu[el.dataset.modalOpen];
   const product = category.find(item => item.id === el.dataset.id);
-  if (product.count < 1) product.count = 1;
+  product.count += 1;
 
   renderAddModal(product);
   elModal.classList.add("modal--show");
@@ -26,4 +26,26 @@ const onModalOutSideCloseClick = e => {
   if (!el.matches("#modal")) return;
 
   elModal.classList.remove("modal--show");
+};
+
+// countIncClick
+const onModalIncClick = e => {
+  const el = e.target.closest("[data-modal-inc]");
+  if (!el) return;
+
+  const category = data.menu[el.dataset.modalCategory];
+  const product = category.find(item => item.id === el.dataset.modalInc);
+  product.count += 1;
+  renderAddModal(product);
+};
+
+// onModalDecClick
+const onModalDecClick = e => {
+  const el = e.target.closest("[data-modal-dec]");
+  if (!el) return;
+
+  const category = data.menu[el.dataset.modalCategory];
+  const product = category.find(item => item.id === el.dataset.modalDec);
+  if (product.count > 1) product.count -= 1;
+  renderAddModal(product);
 };

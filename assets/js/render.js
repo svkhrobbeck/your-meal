@@ -68,10 +68,10 @@ const renderCartItems = data => {
           <span class="item-cart__price">${item.price}</span>
         </div>
       </div>
-      <div class="cart-count item-cart__count" data-cart-count=${item.id}>
-        <button class="cart-count__dec">-</button>
-        <input class="cart-count__input" type="number" value="1" min="0" />
-        <button class="cart-count__inc">+</button>
+      <div class="cart-count item-cart__count" data-cart-count=${item.id} data-type-cart=${item.data}>
+        <button class="cart-count__dec" data-count-dec>-</button>
+        <input class="cart-count__input" type="number" value=${item.count} min="0" />
+        <button class="cart-count__inc" data-count-inc>+</button>
       </div>
     </li>
     `;
@@ -112,10 +112,10 @@ const renderAddModal = product => {
           <li class="add-modal__structure add-modal__structure--weight">520г, ккал 430</li>
         </ul>
         <div class="add-modal__count-price-wrapper">
-          <div class="cart-count add-modal__cart-count" data-cart-count=${product.id}>
-            <button class="cart-count__dec">-</button>
-            <input class="cart-count__input" type="number" value="1" min="0" />
-            <button class="cart-count__inc">+</button>
+          <div class="cart-count add-modal__cart-count">
+            <button class="cart-count__dec" data-modal-dec=${product.id} data-modal-category=${product.data}>-</button>
+            <input class="cart-count__input" type="number" value=${product.count} min="0" />
+            <button class="cart-count__inc" data-modal-inc=${product.id} data-modal-category=${product.data}>+</button>
           </div>
           <p class="add-modal__price">${product.price}</p>
         </div>

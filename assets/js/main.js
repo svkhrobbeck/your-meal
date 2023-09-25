@@ -20,8 +20,8 @@ const onCategoryClick = e => {
   renderCategories(data.categories, +element.dataset.idx);
 };
 
-// onAddToCartClick
-const onAddToCartClick = e => {
+// onToggleToCartClick
+const onToggleToCartClick = e => {
   const element = e.target.closest("[data-add-cart]");
   if (!element) return;
 
@@ -31,8 +31,13 @@ const onAddToCartClick = e => {
   const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
   const isExist = localData.findIndex(item => item.id === selectedProduct.id);
 
-  if (isExist < 0) localData.push(selectedProduct);
-  else localData.splice(isExist, 1);
+  if (isExist < 0) {
+    if (selectedProduct.count === 0) selectedProduct.count = 1;
+    localData.push(selectedProduct);
+  } else {
+    selectedProduct.count = 0;
+    localData.splice(isExist, 1);
+  }
 
   myLocalStorage.set("cart", localData);
   renderCartItems(localData);
@@ -109,6 +114,8 @@ document.addEventListener("click", e => {
   onAddModalOpenClick(e);
   onModalCloseClick(e);
   onModalOutSideCloseClick(e);
+  onModalIncClick(e);
+  onModalDecClick(e);
 });
 
 // disable loader
