@@ -11,6 +11,10 @@
     z-index: 100;
     width: 100%;
   }
+
+  @media only screen and (max-width: $tablet) {
+    margin-bottom: 30px;
+  }
 }
 
 .categories__container {
@@ -37,6 +41,10 @@
       background-color: $dark-orange;
     }
   }
+
+  @media only screen and (max-width: $tablet) {
+    gap: 12px;
+  }
 }
 
 .category {
@@ -60,6 +68,11 @@
   &:hover {
     border-color: $dark-orange;
   }
+
+  @media only screen and (max-width: $tablet) {
+    padding: 3px 8px;
+    // font-size: 12px;
+  }
 }
 
 .category__image {
@@ -69,7 +82,6 @@
 }
 
 .category__text {
-  font-size: 16px;
   font-weight: 400;
   line-height: normal;
 }
