@@ -825,6 +825,8 @@ body {
 .cart__list {
   padding: 0;
   margin-bottom: 16px;
+  max-height: 270px;
+  overflow-y: auto;
 }
 
 .item-cart {
