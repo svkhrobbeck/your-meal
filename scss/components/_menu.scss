@@ -1,9 +1,14 @@
 .menu {
   margin-bottom: 100px;
   max-width: 960px;
+  width: 100%;
 
   @media only screen and (max-width: $tablet-l) {
     max-width: 630px;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    max-width: none;
   }
 }
 
@@ -16,6 +21,7 @@
 }
 
 .menu__cards {
+  width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 30px;
@@ -23,14 +29,35 @@
   @media only screen and (max-width: $tablet-l) {
     grid-template-columns: auto auto;
   }
+
+  @media only screen and (max-width: $tablet) {
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    grid-template-columns: auto auto auto;
+  }
 }
 
 .menu-card {
+  max-width: 300px;
+  width: 100%;
   background-color: $white;
   padding: 12px;
   border-radius: 18px;
   box-shadow: $shadow;
   font-weight: 600;
+
+  @media only screen and (max-width: $tablet) {
+    padding: 4px;
+    max-width: 145px;
+    border-radius: 12px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    max-width: 190px;
+  }
 }
 
 .menu-card__image {
@@ -40,6 +67,14 @@
   width: 100%;
   height: auto;
   margin-bottom: 16px;
+
+  @media only screen and (max-width: $tablet) {
+    max-width: 137px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    max-width: 182px;
+  }
 }
 
 .menu-card__price {
@@ -47,6 +82,10 @@
   line-height: 1;
   margin-top: 0;
   margin-bottom: 8px;
+
+  @media only screen and (max-width: $tablet) {
+    font-size: 16px;
+  }
 }
 
 .menu-card__name {

@@ -8,4 +8,13 @@
   @media only screen and (max-width: $tablet-l) {
     max-width: 1000px;
   }
+
+  @media only screen and (max-width: $tablet) {
+    max-width: 680px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    max-width: 640px;
+    padding: 0 15px;
+  }
 }
