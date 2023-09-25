@@ -12,7 +12,7 @@ const renderCategories = (categories, elWrapper) => {
 
   categories.forEach((category, idx) => {
     html += `
-    <div class="category ${idx === 0 ? "category--active" : ""}">
+    <div class="category ${idx === activeIdx ? "category--active" : ""}" data-idx=${idx} data-category=${category.data}>
       <img class="category__image" src=${category.icon} alt=${category.alt} />
       <span class="category__text">${category.text}</span>
     </div>
