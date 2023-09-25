@@ -643,7 +643,6 @@ body {
 }
 
 .cart__list {
-  border-top: 1px solid #f2f2f3;
   padding: 0;
   margin-bottom: 16px;
 }
@@ -654,6 +653,9 @@ body {
   align-items: center;
   padding: 16px 0;
   border-bottom: 1px solid #f2f2f3;
+}
+.item-cart:first-child {
+  border-top: 1px solid #f2f2f3;
 }
 
 .item-cart__product {
