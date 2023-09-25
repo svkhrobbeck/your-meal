@@ -11,6 +11,19 @@
   &.modal--show {
     display: flex;
   }
+
+  @media only screen and (max-width: $tablet-l) {
+    padding-top: 90px;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    padding: 70px 20px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    padding: 0;
+    background-color: $white;
+  }
 }
 
 .modal__dialog {
@@ -20,6 +33,14 @@
   padding: 24px 24px 36px;
   background-color: $white;
   border-radius: 24px;
+
+  @media only screen and (max-width: $tablet) {
+    padding: 16px 16px 24px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 10px;
+  }
 }
 
 .modal__close {
@@ -31,6 +52,16 @@
   background-color: $white;
   display: flex;
   border: none;
+
+  @media only screen and (max-width: $tablet) {
+    top: 16px;
+    right: 16px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    top: 10px;
+    right: 10px;
+  }
 }
 
 .modal__close-img {
@@ -39,18 +70,33 @@
   height: auto;
 }
 
-.modal__content {
-}
 .add-modal {
+  display: flex;
+  flex-direction: column;
 }
+
 .add-modal__title {
   @include fontSizes(40);
   margin-bottom: 24px;
+
+  @media only screen and (max-width: $tablet) {
+    margin-bottom: 16px;
+  }
 }
 
 .add-modal__inner {
   display: flex;
   gap: 16px;
+
+  @media only screen and (max-width: $tablet) {
+    gap: 8px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+    margin-bottom: 98px;
+    gap: 0;
+  }
 }
 
 .add-modal__inner-left {
@@ -59,13 +105,22 @@
   max-width: 276px;
   width: 100%;
   flex-shrink: 0;
+  margin-bottom: 24px;
+
+  @media only screen and (max-width: $mobile) {
+    max-width: none;
+    margin-bottom: 16px;
+  }
 }
 
 .add-modal__img {
   max-width: 276px;
   width: 100%;
   height: auto;
-  margin-bottom: 24px;
+
+  @media only screen and (max-width: $mobile) {
+    max-width: none;
+  }
 }
 
 .add-modal__info {
@@ -104,10 +159,44 @@
 
 .add-modal__count-price-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.add-modal__order-btn {
+  max-width: 276px;
+  margin-right: 16px;
+
+  @media only screen and (max-width: $tablet) {
+    margin-right: 8px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    max-width: 218px;
+    margin-right: 8px;
+  }
+}
+
+.add-modal__cart-count {
+  margin-right: 10px;
+
+  @media only screen and (max-width: $mobile) {
+    margin-right: 0;
+  }
 }
 
 .add-modal__price {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    text-align: right;
+    margin-top: 16px;
+  }
 }

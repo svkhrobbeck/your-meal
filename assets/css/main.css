@@ -1240,6 +1240,22 @@ body {
 .modal.modal--show {
   display: flex;
 }
+@media only screen and (max-width: 1024px) {
+  .modal {
+    padding-top: 90px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal {
+    padding: 70px 20px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .modal {
+    padding: 0;
+    background-color: #fff;
+  }
+}
 
 .modal__dialog {
   position: relative;
@@ -1248,6 +1264,16 @@ body {
   padding: 24px 24px 36px;
   background-color: #fff;
   border-radius: 24px;
+}
+@media only screen and (max-width: 768px) {
+  .modal__dialog {
+    padding: 16px 16px 24px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .modal__dialog {
+    padding: 32px 10px;
+  }
 }
 
 .modal__close {
@@ -1260,11 +1286,28 @@ body {
   display: flex;
   border: none;
 }
+@media only screen and (max-width: 768px) {
+  .modal__close {
+    top: 16px;
+    right: 16px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .modal__close {
+    top: 10px;
+    right: 10px;
+  }
+}
 
 .modal__close-img {
   max-width: 24px;
   width: 100%;
   height: auto;
+}
+
+.add-modal {
+  display: flex;
+  flex-direction: column;
 }
 
 .add-modal__title {
@@ -1279,10 +1322,27 @@ body {
     font-size: 28px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .add-modal__title {
+    margin-bottom: 16px;
+  }
+}
 
 .add-modal__inner {
   display: flex;
   gap: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .add-modal__inner {
+    gap: 8px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__inner {
+    flex-direction: column;
+    margin-bottom: 98px;
+    gap: 0;
+  }
 }
 
 .add-modal__inner-left {
@@ -1291,13 +1351,24 @@ body {
   max-width: 276px;
   width: 100%;
   flex-shrink: 0;
+  margin-bottom: 24px;
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__inner-left {
+    max-width: none;
+    margin-bottom: 16px;
+  }
 }
 
 .add-modal__img {
   max-width: 276px;
   width: 100%;
   height: auto;
-  margin-bottom: 24px;
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__img {
+    max-width: none;
+  }
 }
 
 .add-modal__info {
@@ -1340,12 +1411,51 @@ body {
 
 .add-modal__count-price-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__count-price-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.add-modal__order-btn {
+  max-width: 276px;
+  margin-right: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .add-modal__order-btn {
+    margin-right: 8px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__order-btn {
+    max-width: 218px;
+    margin-right: 8px;
+  }
+}
+
+.add-modal__cart-count {
+  margin-right: 10px;
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__cart-count {
+    margin-right: 0;
+  }
 }
 
 .add-modal__price {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+@media only screen and (max-width: 576px) {
+  .add-modal__price {
+    width: 100%;
+    text-align: right;
+    margin-top: 16px;
+  }
 }
 
 .footer {

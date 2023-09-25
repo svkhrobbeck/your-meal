@@ -111,7 +111,6 @@ const renderAddModal = product => {
           height="220"
           srcset="${product.image} 1x, ${product.image2x} 2x"
         />
-        <button class="button--dark-orange" data-id=${product.id} data-add-cart=${product.data}>Добавить</button>
       </div>
       <div class="add-modal__info">
         <p class="add-modal__desc">
@@ -127,7 +126,12 @@ const renderAddModal = product => {
           <li class="add-modal__structure">Соус горчичный</li>
           <li class="add-modal__structure add-modal__structure--weight">520г, ккал 430</li>
         </ul>
-        <div class="add-modal__count-price-wrapper">
+      </div>
+      </div>
+      <div class="add-modal__count-price-wrapper">
+        <button class="button--dark-orange add-modal__order-btn" data-id=${product.id} data-add-cart=${
+    product.data
+  }>Добавить</button>
           <div class="cart-count add-modal__cart-count">
             <button ${product.count === 1 ? "disabled" : ""} class="cart-count__dec ${
     product.count === 1 ? "cart-count__dec--disabled" : ""
@@ -137,8 +141,6 @@ const renderAddModal = product => {
           </div>
           <p class="add-modal__price">${parseInt(product.price) * product.count}₽</p>
         </div>
-      </div>
-    </div>
   </div>
   `;
 };
