@@ -438,6 +438,11 @@ body {
   justify-content: center;
   padding: 24px 0;
 }
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 22px 0;
+  }
+}
 
 .logo {
   display: flex;
@@ -452,6 +457,9 @@ body {
 
 .logo__pic {
   display: block;
+  max-width: 151px;
+  width: 100%;
+  height: auto;
 }
 
 .hero {
@@ -486,6 +494,14 @@ body {
     background-size: 100% 110px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .hero {
+    margin-bottom: 110px;
+  }
+  .hero::after {
+    background-size: 100% 80px;
+  }
+}
 
 .hero__container {
   display: flex;
@@ -496,11 +512,22 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 1024px) {
+  .hero__container {
+    gap: 10px;
+    justify-content: center;
+  }
+}
 
 .hero__image {
   max-width: 326px;
   width: 100%;
   height: auto;
+}
+@media only screen and (max-width: 768px) {
+  .hero__image {
+    max-width: 227px;
+  }
 }
 
 .hero__heading {
@@ -510,6 +537,12 @@ body {
   font-size: 50px;
   font-weight: 800;
   line-height: 1.2;
+}
+@media only screen and (max-width: 768px) {
+  .hero__heading {
+    font-size: 36px;
+    margin-bottom: 26px;
+  }
 }
 
 .hero__heading-inner {
@@ -522,6 +555,11 @@ body {
 }
 .hero__delivery-text-inner {
   font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  .hero__delivery-text {
+    font-size: 12px;
+  }
 }
 
 .categories {

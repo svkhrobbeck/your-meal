@@ -30,6 +30,14 @@
       background-size: 100% 110px;
     }
   }
+
+  @media only screen and (max-width: $tablet) {
+    margin-bottom: 110px;
+
+    &::after {
+      background-size: 100% 80px;
+    }
+  }
 }
 
 .hero__container {
@@ -40,12 +48,21 @@
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
+
+  @media only screen and (max-width: $tablet-l) {
+    gap: 10px;
+    justify-content: center;
+  }
 }
 
 .hero__image {
   max-width: 326px;
   width: 100%;
   height: auto;
+
+  @media only screen and (max-width: $tablet) {
+    max-width: 227px;
+  }
 }
 
 .hero__heading {
@@ -55,6 +72,11 @@
   font-size: 50px;
   font-weight: 800;
   line-height: 1.2;
+
+  @media only screen and (max-width: $tablet) {
+    font-size: 36px;
+    margin-bottom: 26px;
+  }
 }
 
 .hero__heading-inner {
@@ -67,5 +89,9 @@
 
   &-inner {
     font-weight: 600;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    font-size: 12px;
   }
 }

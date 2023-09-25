@@ -3,6 +3,10 @@
   display: flex;
   justify-content: center;
   padding: 24px 0;
+
+  @media only screen and (max-width: $tablet) {
+    padding: 22px 0;
+  }
 }
 
 .logo {
@@ -12,4 +16,7 @@
 
 .logo__pic {
   display: block;
+  max-width: 151px;
+  width: 100%;
+  height: auto;
 }
