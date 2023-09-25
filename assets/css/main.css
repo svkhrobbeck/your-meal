@@ -470,6 +470,14 @@ body {
   background: url("../images/hero-circle.svg") no-repeat top;
   background-size: 100% 180px;
 }
+@media only screen and (max-width: 1240px) {
+  .hero {
+    margin-bottom: 170px;
+  }
+  .hero::after {
+    background-size: 100% 130px;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .hero {
     margin-bottom: 150px;
@@ -834,6 +842,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 35px;
 }
 
 .footer-logo {
@@ -858,6 +867,16 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 125px;
+}
+@media only screen and (max-width: 1240px) {
+  .footer__actions {
+    gap: 90px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .footer__actions {
+    gap: 50px;
+  }
 }
 
 .footer__actions-text {
@@ -930,6 +949,7 @@ body {
 }
 
 .footer__copyright {
+  margin: 0;
   color: #000;
   font-size: 12px;
 }/*# sourceMappingURL=main.css.map */

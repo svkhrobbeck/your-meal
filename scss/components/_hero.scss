@@ -15,6 +15,14 @@
     background-size: 100% 180px;
   }
 
+  @media only screen and (max-width: $desktop) {
+    margin-bottom: 170px;
+
+    &::after {
+      background-size: 100% 130px;
+    }
+  }
+
   @media only screen and (max-width: $tablet-l) {
     margin-bottom: 150px;
 

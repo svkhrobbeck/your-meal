@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 35px;
 }
 
 .footer-logo {
@@ -26,6 +27,14 @@
   display: flex;
   align-items: flex-start;
   gap: 125px;
+
+  @media only screen and (max-width: $desktop) {
+    gap: 90px;
+  }
+
+  @media only screen and (max-width: $tablet-l) {
+    gap: 50px;
+  }
 }
 
 .footer__actions-text {
@@ -90,6 +99,7 @@
 }
 
 .footer__copyright {
+  margin: 0;
   color: #000;
   font-size: 12px;
 }
