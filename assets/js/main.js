@@ -1,6 +1,8 @@
 // elements
-const elCategoriesWrapper = document.querySelector(".js-categories");
-const elMenuCardsWrapper = document.querySelector(".js-menu-cards");
+const elCategories = document.getElementById("categories");
+const elCategoriesWrapper = document.getElementById("categoriesWrapper");
+const elMenu = document.getElementById("menu");
+const elMenuCardsWrapper = document.getElementById("menuCards");
 
 // renderCategories
 const renderCategories = (categories, elWrapper) => {
@@ -42,6 +44,25 @@ const renderMenuCards = (foods, elWrapper) => {
   elWrapper.append(...html);
 };
 
+// getDistanceTop
+const getDistanceTop = el => {
+  const distance = window.pageYOffset + el.getBoundingClientRect().top;
+
+  return distance;
+};
+
 // called functions
 renderCategories(data.categories, elCategoriesWrapper);
 renderMenuCards(data.menu.burgers, elMenuCardsWrapper);
+
+const elCategoriesTop = getDistanceTop(elCategoriesWrapper.parentElement);
+
+// events
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= elCategoriesTop) {
+    console.log("yes");
+    elCategories.classList.add("categories--fixed");
+  } else {
+    elCategories.classList.remove("categories--fixed");
+  }
+});
