@@ -331,6 +331,62 @@ template {
   display: none;
 }
 
+.loader {
+  background-color: #ff7020;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.loader.not-visible {
+  opacity: 0;
+}
+.loader.hidden {
+  display: none;
+}
+
+.loader__logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.loader__inner {
+  display: block;
+  position: relative;
+  height: 12px;
+  width: 200px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.loader__inner::after {
+  content: "";
+  width: 40%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
 html {
   scroll-behavior: smooth;
   height: 100%;

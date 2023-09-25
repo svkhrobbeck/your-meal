@@ -3,6 +3,7 @@ const elCategories = document.getElementById("categories");
 const elCategoriesWrapper = document.getElementById("categoriesWrapper");
 const elMenu = document.getElementById("menu");
 const elMenuCardsWrapper = document.getElementById("menuCards");
+const elLoader = document.getElementById("loader");
 
 // renderCategories
 const renderCategories = (categories, elWrapper) => {
@@ -66,3 +67,13 @@ window.addEventListener("scroll", () => {
     elCategories.classList.remove("categories--fixed");
   }
 });
+
+// disable loader
+setTimeout(() => {
+  elLoader.classList.add("not-visible");
+
+  setTimeout(() => {
+    elLoader.classList.remove("not-visible");
+    elLoader.classList.add("hidden");
+  }, 500);
+}, 1000);
