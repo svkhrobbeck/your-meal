@@ -82,80 +82,16 @@
               <!-- cart header -->
               <header class="cart__header">
                 <h3 class="cart__heading">Корзина</h3>
-                <span class="cart__count">3</span>
+                <span class="cart__count" id="cartCount">0</span>
               </header>
 
               <!-- cart list -->
-              <ul class="cart__list">
-                <li class="cart__item item-cart">
-                  <div class="item-cart__product">
-                    <img
-                      class="item-cart__image"
-                      src="assets/images/burger1.jpg"
-                      alt="burger image"
-                      width="64"
-                      height="52"
-                    />
-                    <div class="item-cart__content">
-                      <p class="item-cart__product-name">Супер сырный</p>
-                      <span class="item-cart__weight">512г</span>
-                      <span class="item-cart__price">550₽</span>
-                    </div>
-                  </div>
-                  <div class="item-cart__count">
-                    <button class="item-cart__dec">-</button>
-                    <input class="item-cart__count-input" type="number" value="1" min="0" />
-                    <button class="item-cart__inc">+</button>
-                  </div>
-                </li>
-                <li class="cart__item item-cart">
-                  <div class="item-cart__product">
-                    <img
-                      class="item-cart__image"
-                      src="assets/images/snack2.jpg"
-                      alt="snack image"
-                      width="64"
-                      height="52"
-                    />
-                    <div class="item-cart__content">
-                      <p class="item-cart__product-name">Картошка фри</p>
-                      <span class="item-cart__weight">180г</span>
-                      <span class="item-cart__price">245₽</span>
-                    </div>
-                  </div>
-                  <div class="item-cart__count">
-                    <button class="item-cart__dec">-</button>
-                    <input class="item-cart__count-input" type="number" value="2" min="0" />
-                    <button class="item-cart__inc">+</button>
-                  </div>
-                </li>
-                <li class="cart__item item-cart">
-                  <div class="item-cart__product">
-                    <img
-                      class="item-cart__image"
-                      src="assets/images/hot-dog2.jpg"
-                      alt="hot dog image"
-                      width="64"
-                      height="52"
-                    />
-                    <div class="item-cart__content">
-                      <p class="item-cart__product-name">Жгучий хот-дог</p>
-                      <span class="item-cart__weight">245г</span>
-                      <span class="item-cart__price">239₽</span>
-                    </div>
-                  </div>
-                  <div class="item-cart__count">
-                    <button class="item-cart__dec">-</button>
-                    <input class="item-cart__count-input" type="number" value="1" min="0" />
-                    <button class="item-cart__inc">+</button>
-                  </div>
-                </li>
-              </ul>
+              <ul class="cart__list" id="cartList"></ul>
               <!-- cart footer -->
               <footer class="cart__footer">
                 <div class="cart__total">
                   <p class="cart__total-text">Итого</p>
-                  <p class="cart__total-price">1034₽</p>
+                  <p class="cart__total-price" id="cartTotalPrice">0₽</p>
                 </div>
                 <button class="cart__order-btn button--dark-orange">Оформить заказ</button>
                 <p class="cart__order-text">Бесплатная доставка</p>
@@ -167,7 +103,7 @@
           <!-- MENU -->
           <section class="menu" id="menu">
             <h2 class="visually-hidden">Меню</h2>
-            <h3 class="menu__title">Бургеры</h3>
+            <h3 class="menu__title" id="menuTitle">Бургеры</h3>
 
             <!-- menu cards -->
             <div class="menu__cards" id="menuCards"></div>
@@ -235,9 +171,22 @@
     </footer>
     <!-- /FOOTER -->
 
+    <!-- MODAL -->
+    <section class="modal" id="modal">
+      <div class="modal__dialog">
+        <button class="modal__close" data-modal-close>
+          <img class="modal__close-img" src="assets/icons/icon-close.svg" alt="icon close" width="24" height="24" />
+        </button>
+        <div class="modal__content" id="modalContent"></div>
+      </div>
+    </section>
+    <!-- /MODAL -->
+
     <!-- SCRIPTS -->
     <script src="assets/js/helpers.js"></script>
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/modal.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -14,11 +14,7 @@
 }
 
 .menu__title {
-  margin-top: 0;
-  margin-bottom: 36px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.2;
+  @include fontSizes(40);
 
   @media only screen and (max-width: $tablet-l) {
     margin-bottom: 24px;
@@ -26,7 +22,6 @@
 
   @media only screen and (max-width: $tablet) {
     margin-bottom: 20px;
-    font-size: 28px;
   }
 
   @media only screen and (max-width: $mobile) {

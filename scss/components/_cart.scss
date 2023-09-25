@@ -153,9 +153,7 @@
 .item-cart__content {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
+  @include fontSizes(12);
 }
 
 .item-cart__product-name {
@@ -167,44 +165,13 @@
   color: #b1b1b1;
   display: inline-block;
   margin-bottom: 6px;
-  line-height: normal;
 }
 
 .item-cart__price {
   display: inline-block;
-  line-height: normal;
 }
 
-.item-cart__count {
-  background-color: $light;
-  border-radius: 12px;
-  padding: 9px 12px;
-  display: flex;
-  align-items: center;
-}
-
-.item-cart__dec {
-  @include clearActions;
-}
-
-.item-cart__count-input {
-  @include clearActions;
-  width: 20px;
-  min-width: auto;
-  text-align: center;
-
-  -moz-appearance: textfield;
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
-.item-cart__inc {
-  @include clearActions;
-}
-
+// cart footer
 .cart__footer {
   display: flex;
   flex-direction: column;

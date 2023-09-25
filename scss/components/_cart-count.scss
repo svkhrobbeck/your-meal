@@ -1,0 +1,29 @@
+.cart-count {
+  background-color: $light;
+  border-radius: 12px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.cart-count__dec {
+  @include clearActions;
+}
+
+.cart-count__input {
+  @include clearActions;
+  width: 20px;
+  min-width: auto;
+  text-align: center;
+
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.cart-count__inc {
+  @include clearActions;
+}

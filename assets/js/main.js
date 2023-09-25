@@ -1,71 +1,73 @@
 // elements
-const elCategories = document.getElementById("categories");
-const elCategoriesWrapper = document.getElementById("categoriesWrapper");
-const elMenu = document.getElementById("menu");
-const elMenuCardsWrapper = document.getElementById("menuCards");
-const elLoader = document.getElementById("loader");
+const elLoader = document.getElementById("loader"),
+  elCategories = document.getElementById("categories"),
+  elMenu = document.getElementById("menu"),
+  elMenuTitle = document.getElementById("menuTitle");
 
-// renderCategories
-const renderCategories = (categories, elWrapper) => {
-  elWrapper.innerHTML = "";
-  let html = "";
+// variables
+const selectedCategory = myLocalStorage.get("category");
+const selectedIndex = data.categories.findIndex(item => item.data === selectedCategory);
 
-  categories.forEach((category, idx) => {
-    html += `
-    <div class="category ${idx === activeIdx ? "category--active" : ""}" data-idx=${idx} data-category=${category.data}>
-      <img class="category__image" src=${category.icon} alt=${category.alt} />
-      <span class="category__text">${category.text}</span>
-    </div>
-    `;
-  });
+// onCategoryClick
+const onCategoryClick = e => {
+  const element = e.target.closest("[data-category]");
+  if (!element) return;
 
-  elWrapper.innerHTML = html;
+  const category = element.dataset.category;
+  myLocalStorage.set("category", category);
+
+  renderMenuCards(data.menu[category]);
+  renderCategories(data.categories, +element.dataset.idx);
 };
 
-// renderMenuCards
-const renderMenuCards = (foods, elWrapper) => {
-  elWrapper.innerHTML = "";
-  const html = [];
+// onAddToCartClick
+const onAddToCartClick = e => {
+  const element = e.target.closest("[data-add-cart]");
+  if (!element) return;
 
-  foods.forEach(food => {
-    const elMenuCard = document.createElement("div");
-    elMenuCard.classList.add("menu__card", "menu-card");
+  const category = data.menu[element.dataset.addCart];
+  const selectedProduct = category.find(item => item.id === element.dataset.id);
 
-    elMenuCard.innerHTML = `
-      <img class="menu-card__image" src=${food.image} alt=${food.alt} width="276" height="220" srcset="${food.image} 1x, ${food.image2x} 2x" />
-      <p class="menu-card__price">${food.price}</p>
-      <p class="menu-card__name">${food.name}</p>
-      <p class="menu-card__weight">${food.weight}</p>
-      <button class="menu-card__add-btn button--light">Добавить</button>
-    `;
+  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+  const isExist = localData.findIndex(item => item.id === selectedProduct.id);
 
-    html.push(elMenuCard);
-  });
+  if (isExist < 0) localData.push(selectedProduct);
+  else localData.splice(isExist, 1);
 
-  elWrapper.append(...html);
-};
+  myLocalStorage.set("cart", localData);
+  renderCartItems(localData);
+  renderMenuCards(data.menu[selectedCategory || "burgers"]);
 
-// getDistanceTop
-const getDistanceTop = el => {
-  const distance = window.pageYOffset + el.getBoundingClientRect().top;
-
-  return distance;
+  if (elModal.classList.contains("modal--show")) {
+    elModal.classList.remove("modal--show");
+  }
 };
 
 // called functions
-renderCategories(data.categories, elCategoriesWrapper);
-renderMenuCards(data.menu.burgers, elMenuCardsWrapper);
+renderCategories(data.categories, selectedIndex);
+renderMenuCards(data.menu[selectedCategory || "burgers"]);
+renderCartItems(myLocalStorage.get("cart") || []);
+const elCategoriesTop = getDistanceTop(elCategories);
 
-const elCategoriesTop = getDistanceTop(elCategoriesWrapper.parentElement);
-
-// events
+// ==== * EVENTS * ====
+// scroll event
 window.addEventListener("scroll", () => {
   if (window.scrollY >= elCategoriesTop) {
-    console.log("yes");
-    elCategories.classList.add("categories--fixed");
+    elCategories.classList.add("categories--sticky");
   } else {
-    elCategories.classList.remove("categories--fixed");
+    elCategories.classList.remove("categories--sticky");
   }
+});
+
+// click event
+document.addEventListener("click", e => {
+  onCategoryClick(e);
+  onAddToCartClick(e);
+
+  // modal
+  onAddModalOpenClick(e);
+  onModalCloseClick(e);
+  onModalOutSideCloseClick(e);
 });
 
 // disable loader
