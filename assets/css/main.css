@@ -518,6 +518,14 @@ body {
     background-size: 100% 80px;
   }
 }
+@media only screen and (max-width: 576px) {
+  .hero {
+    margin-bottom: 50px;
+  }
+  .hero::after {
+    background-size: 100% 40px;
+  }
+}
 
 .hero__container {
   display: flex;
@@ -532,6 +540,13 @@ body {
   .hero__container {
     gap: 10px;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
   }
 }
 
@@ -560,6 +575,12 @@ body {
     margin-bottom: 26px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .hero__heading {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+}
 
 .hero__heading-inner {
   color: #ff7020;
@@ -574,6 +595,8 @@ body {
 }
 
 .categories {
+  position: relative;
+  z-index: 10;
   margin-bottom: 50px;
   background-color: #f9f9f9;
   transition: all 0.4s ease;

@@ -38,6 +38,14 @@
       background-size: 100% 80px;
     }
   }
+
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 50px;
+
+    &::after {
+      background-size: 100% 40px;
+    }
+  }
 }
 
 .hero__container {
@@ -52,6 +60,12 @@
   @media only screen and (max-width: $tablet-l) {
     gap: 10px;
     justify-content: center;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
   }
 }
 
@@ -76,6 +90,11 @@
   @media only screen and (max-width: $tablet) {
     font-size: 36px;
     margin-bottom: 26px;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    font-size: 30px;
+    margin-bottom: 16px;
   }
 }
 
