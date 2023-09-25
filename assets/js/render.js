@@ -44,6 +44,7 @@ const renderMenuCards = foods => {
 const renderCartItems = data => {
   const elCartList = document.getElementById("cartList"),
     elCartCount = document.getElementById("cartCount"),
+    elCartFooter = document.getElementById("cartFooter"),
     elTotalPrice = document.getElementById("cartTotalPrice"),
     totalPrice = data.reduce((a, b) => a + parseInt(b.price) * b.count, 0);
 
@@ -78,6 +79,15 @@ const renderCartItems = data => {
     </li>
     `;
   });
+
+  if (data.length === 0) {
+    elCartFooter.classList.add("hidden");
+    elCartList.classList.add("cart__list--end");
+    elCartList.innerHTML = `<li class="cart__item"><P class="cart__empty-text">Тут пока пусто :(</P></li>`;
+  } else {
+    elCartFooter.classList.remove("hidden");
+    elCartList.classList.remove("cart__list--end");
+  }
 };
 
 // renderAddModal
@@ -121,7 +131,7 @@ const renderAddModal = product => {
             <input class="cart-count__input" type="number" value=${product.count} min="0" />
             <button class="cart-count__inc" data-modal-inc=${product.id} data-modal-category=${product.data}>+</button>
           </div>
-          <p class="add-modal__price">${product.price}</p>
+          <p class="add-modal__price">${parseInt(product.price) * product.count}₽</p>
         </div>
       </div>
     </div>

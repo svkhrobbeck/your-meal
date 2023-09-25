@@ -120,9 +120,13 @@
 
 .cart__list {
   padding: 0;
-  margin-bottom: 16px;
   max-height: 270px;
   overflow-y: auto;
+  margin-bottom: 16px;
+
+  &--end {
+    margin-bottom: 0;
+  }
 }
 
 .item-cart {
@@ -175,6 +179,10 @@
 .cart__footer {
   display: flex;
   flex-direction: column;
+
+  &.hidden {
+    display: none;
+  }
 }
 
 .cart__total {
@@ -208,4 +216,9 @@
     background: url("../icons/icon-delivery.svg") no-repeat center;
     margin-right: 8px;
   }
+}
+
+.cart__empty-text {
+  margin-top: 16px;
+  margin-bottom: 0;
 }

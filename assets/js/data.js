@@ -194,5 +194,11 @@ const data = {
         count: 0,
       },
     ],
+    combo: [],
+    shaurma: [],
+    pizzas: [],
+    pastas: [],
+    deserts: [],
+    ketchups: [],
   },
 };
