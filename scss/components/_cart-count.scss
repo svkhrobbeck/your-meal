@@ -28,3 +28,8 @@
   @include clearActions;
   cursor: pointer;
 }
+
+.cart-count__del {
+  @include clearActions;
+  cursor: pointer;
+}

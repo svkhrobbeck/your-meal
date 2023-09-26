@@ -1064,6 +1064,14 @@ body {
   cursor: pointer;
 }
 
+.cart-count__del {
+  border: none;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
 .menu {
   margin-bottom: 100px;
   max-width: 960px;
