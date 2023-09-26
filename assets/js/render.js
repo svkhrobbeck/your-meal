@@ -74,9 +74,11 @@ const renderCartItems = data => {
         </div>
       </div>
       <div class="cart-count item-cart__count" data-cart-count=${item.id} data-type-cart=${item.data}>
-        <button ${item.count === 1 ? "disabled" : ""} class="cart-count__dec ${
-      item.count === 1 ? "cart-count__dec--disabled" : ""
-    }" data-count-dec>-</button>
+      ${
+        item.count === 1
+          ? `<button class="cart-count__del" data-count-del></button>`
+          : `<button class="cart-count__dec" data-count-dec>-</button>`
+      }
         <p class="cart-count__text">${item.count}</p>
         <button class="cart-count__inc" data-count-inc>+</button>
       </div>
