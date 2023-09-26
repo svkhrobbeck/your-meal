@@ -104,6 +104,24 @@ const onCartDelClick = e => {
   renderMenuCards(data.menu[selectedCategory]);
 };
 
+// changeDeliveryRadio
+const changeDeliveryRadio = e => {
+  const el = e.target.closest("[data-delivery-radio]");
+  if (!el) return;
+
+  document.getElementById("addresWrapperOrder").classList.add("hidden");
+  document.getElementById("deliveryLabel").classList.add("delivery-modal__label--bottom");
+};
+
+// changeTakeAwayRadio
+const changeTakeAwayRadio = e => {
+  const el = e.target.closest("[data-takeaway-radio]");
+  if (!el) return;
+
+  document.getElementById("addresWrapperOrder").classList.remove("hidden");
+  document.getElementById("deliveryLabel").classList.remove("delivery-modal__label--bottom");
+};
+
 // called functions
 renderCategories(data.categories, selectedIndex);
 renderMenuCards(data.menu[selectedCategory]);
@@ -130,10 +148,21 @@ document.addEventListener("click", e => {
 
   // modal
   onAddModalOpenClick(e);
+  onDeliveryModalOpenClick(e);
   onModalCloseClick(e);
   onModalOutSideCloseClick(e);
   onModalIncClick(e);
   onModalDecClick(e);
+});
+
+// submit event
+document.addEventListener("submit", e => {
+  deliveryModalSubmit(e);
+});
+
+document.addEventListener("change", e => {
+  changeDeliveryRadio(e);
+  changeTakeAwayRadio(e);
 });
 
 // disable loader

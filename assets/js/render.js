@@ -160,7 +160,7 @@ const renderDeliveryModal = () => {
         srcset="assets/images/img-cookie-modal.png 1x, assets/images/img-cookie-modal@2x.png 2x"
       />
     </div>
-    <form class="delivery-modal__form">
+    <form class="delivery-modal__form" data-delivery-form>
       <h3 class="delivery-modal__title">Доставка</h3>
       <input
         class="delivery-modal__form-field delivery-modal__form-field--name"
@@ -176,55 +176,58 @@ const renderDeliveryModal = () => {
         placeholder="Телефон"
         aria-label="Телефон"
       />
-      <div class="delivery-modal__radio-label delivery-modal__radio-label--take-away">
-        <input
-          class="delivery-modal__radio visually-hidden"
-          type="radio"
-          name="delivery_type"
-          id="typeTakeAway"
-        />
-
-        <label class="delivery-modal__label" for="typeTakeAway">
-          <span class="delivery-modal__fake-radio"></span>
-          Самовывоз</label>
-      </div>
-      <div class="delivery-modal__radio-label delivery-modal__radio-label--delivery">
-        <input
-          class="delivery-modal__radio visually-hidden"
-          type="radio"
-          name="delivery_type"
-          id="typeDelivery"
-        />
-
-        <label class="delivery-modal__label" for="typeDelivery">
-          <span class="delivery-modal__fake-radio"></span>
-          Доставка</label>
-      </div>
       <input
-        class="delivery-modal__form-field delivery-modal__form-field--address"
-        type="text"
-        name="address"
-        placeholder="Улица, дом, квартира"
-        aria-label="Улица, дом,
-        квартира"
+        class="delivery-modal__radio visually-hidden"
+        data-delivery-radio
+        checked
+        type="radio"
+        name="delivery_type"
+        id="typeTakeAway"
       />
-      <div class="delivery-modal__form-fields">
+
+      <label class="delivery-modal__label delivery-modal__label--take-away" for="typeTakeAway">
+        <span class="delivery-modal__fake-radio"></span>
+        Самовывоз</label>
+
+      <input
+        class="delivery-modal__radio visually-hidden"
+        data-takeaway-radio
+        type="radio"
+        name="delivery_type"
+        id="typeDelivery"
+      />
+
+      <label class="delivery-modal__label delivery-modal__label--delivery delivery-modal__label--bottom" id="deliveryLabel" for="typeDelivery">
+        <span class="delivery-modal__fake-radio"></span>
+        Доставка</label>
+
+      <div class="delivery-modal__address-wrapper hidden" id="addresWrapperOrder">
         <input
-          class="delivery-modal__form-field"
+          class="delivery-modal__form-field delivery-modal__form-field--address"
           type="text"
-          name="floor"
-          placeholder="Этаж"
-          aria-label="Этаж"
+          name="address"
+          placeholder="Улица, дом, квартира"
+          aria-label="Улица, дом,
+          квартира"
         />
-        <input
-          class="delivery-modal__form-field"
-          type="text"
-          name="interkom"
-          placeholder="Домофон"
-          aria-label="Домофон"
-        />
+        <div class="delivery-modal__form-fields">
+          <input
+            class="delivery-modal__form-field"
+            type="text"
+            name="floor"
+            placeholder="Этаж"
+            aria-label="Этаж"
+          />
+          <input
+            class="delivery-modal__form-field"
+            type="text"
+            name="interkom"
+            placeholder="Домофон"
+            aria-label="Домофон"
+          />
+        </div>
       </div>
-      <button class="delivery-modal__form-btn button--dark-orange">Оформить</button>
+      <button class="delivery-modal__form-btn button--dark-orange" type="submit">Оформить</button>
     </form>
   </div>
   `;

@@ -11,7 +11,17 @@ const onAddModalOpenClick = e => {
 
   renderAddModal(product);
   elModal.classList.add("modal--show");
-  document.body.classList.add("hidden")
+  document.body.classList.add("hidden");
+};
+
+// onDeliveryModalOpenClick
+const onDeliveryModalOpenClick = e => {
+  const el = e.target.closest("[data-order-btn]");
+  if (!el) return;
+
+  renderDeliveryModal();
+  elModal.classList.add("modal--show");
+  document.body.classList.add("hidden");
 };
 
 // onAddModalCloseClick
@@ -29,6 +39,17 @@ const onModalOutSideCloseClick = e => {
 
   elModal.classList.remove("modal--show");
   document.body.classList.remove("hidden");
+};
+
+// deliveryModalSubmit
+const deliveryModalSubmit = e => {
+  const el = e.target.closest("[data-delivery-form]");
+  if (!el) return;
+  e.preventDefault();
+
+  elModal.classList.remove("modal--show");
+  document.body.classList.remove("hidden");
+  el.reset();
 };
 
 // countIncClick
