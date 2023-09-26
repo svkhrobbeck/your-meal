@@ -41,7 +41,7 @@ const onToggleToCartClick = e => {
 
   myLocalStorage.set("cart", localData);
   renderCartItems(localData);
-  renderMenuCards(data.menu[selectedCategory || "burgers"]);
+  renderMenuCards(data.menu[myLocalStorage.get("category") || "burgers"]);
 
   if (elModal.classList.contains("modal--show")) {
     elModal.classList.remove("modal--show");
