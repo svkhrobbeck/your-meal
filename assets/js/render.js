@@ -76,7 +76,7 @@ const renderCartItems = data => {
       <div class="cart-count item-cart__count" data-cart-count=${item.id} data-type-cart=${item.data}>
       ${
         item.count === 1
-          ? `<button class="cart-count__del" data-count-del></button>`
+          ? `<button class="cart-count__del" data-cart-del><img src="assets/icons/icon-trash.svg" alt="icon trash" width="16" height="16" /></button>`
           : `<button class="cart-count__dec" data-count-dec>-</button>`
       }
         <p class="cart-count__text">${item.count}</p>

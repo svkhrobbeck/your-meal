@@ -86,6 +86,23 @@ const onCountDecClick = e => {
   renderCartItems(myLocalStorage.get("cart") || []);
 };
 
+// onCartDelClick
+const onCartDelClick = e => {
+  const el = e.target.closest("[data-cart-del]");
+  if (!el) return;
+
+  const dataset = el.parentElement.dataset;
+  const id = dataset.cartCount;
+
+  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+  const idx = localData.findIndex(item => item.id === id);
+  localData.splice(idx, 1);
+
+  myLocalStorage.set("cart", localData);
+  renderCartItems(localData);
+  renderMenuCards(data.menu[selectedCategory]);
+};
+
 // called functions
 renderCategories(data.categories, selectedIndex);
 renderMenuCards(data.menu[selectedCategory]);
@@ -108,6 +125,7 @@ document.addEventListener("click", e => {
   onToggleToCartClick(e);
   onCountIncClick(e);
   onCountDecClick(e);
+  onCartDelClick(e);
 
   // modal
   onAddModalOpenClick(e);
