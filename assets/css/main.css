@@ -1577,8 +1577,8 @@ body.hidden {
   padding: 12px;
   border-radius: 12px;
   border: 1px solid #f2f2f3;
-  background: #fff;
-  color: #b1b1b1;
+  background-color: #fff;
+  color: #000;
   margin-top: 0;
   font-size: 12px;
   font-weight: 400;
@@ -1589,6 +1589,12 @@ body.hidden {
   .delivery-modal__form-field {
     font-size: 10px;
   }
+}
+.delivery-modal__form-field::-moz-placeholder {
+  color: #b1b1b1;
+}
+.delivery-modal__form-field::placeholder {
+  color: #b1b1b1;
 }
 .delivery-modal__form-field--name, .delivery-modal__form-field--address {
   margin-bottom: 8px;
