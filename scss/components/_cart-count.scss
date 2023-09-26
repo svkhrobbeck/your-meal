@@ -8,9 +8,10 @@
 
 .cart-count__dec {
   @include clearActions;
+  cursor: pointer;
 
   &--disabled {
-    color: rgba($color: $black, $alpha: .4);
+    color: rgba($color: $black, $alpha: 0.4);
   }
 }
 
@@ -30,4 +31,5 @@
 
 .cart-count__inc {
   @include clearActions;
+  cursor: pointer;
 }
