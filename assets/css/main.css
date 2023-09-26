@@ -1028,6 +1028,9 @@ body {
   border-radius: 12px;
   padding: 9px 12px;
   display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   align-items: center;
 }
 
@@ -1042,19 +1045,15 @@ body {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.cart-count__input {
+.cart-count__text {
   border: none;
   background-color: transparent;
   width: auto;
   height: auto;
   width: 20px;
-  min-width: auto;
   text-align: center;
-  -moz-appearance: textfield;
-}
-.cart-count__input::-webkit-outer-spin-button, .cart-count__input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   margin: 0;
+  cursor: pointer;
 }
 
 .cart-count__inc {

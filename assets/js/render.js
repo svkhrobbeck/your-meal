@@ -77,7 +77,7 @@ const renderCartItems = data => {
         <button ${item.count === 1 ? "disabled" : ""} class="cart-count__dec ${
       item.count === 1 ? "cart-count__dec--disabled" : ""
     }" data-count-dec>-</button>
-        <input class="cart-count__input" type="number" value=${item.count} min="0" />
+        <p class="cart-count__text">${item.count}</p>
         <button class="cart-count__inc" data-count-inc>+</button>
       </div>
     </li>
@@ -136,7 +136,7 @@ const renderAddModal = product => {
             <button ${product.count === 1 ? "disabled" : ""} class="cart-count__dec ${
     product.count === 1 ? "cart-count__dec--disabled" : ""
   }" data-modal-dec=${product.id} data-modal-category=${product.data}>-</button>
-            <input class="cart-count__input" type="number" value=${product.count} min="0" />
+            <p class="cart-count__text">${product.count}</p>
             <button class="cart-count__inc" data-modal-inc=${product.id} data-modal-category=${product.data}>+</button>
           </div>
           <p class="add-modal__price">${parseInt(product.price) * product.count}₽</p>
