@@ -47,13 +47,13 @@ const renderMenuCards = foods => {
 // renderCartItems
 const renderCartItems = data => {
   const elCartList = document.getElementById("cartList"),
-    elCartCount = document.getElementById("cartCount"),
+    elsCartCount = document.querySelectorAll("[data-product-count]"),
     elCartFooter = document.getElementById("cartFooter"),
     elTotalPrice = document.getElementById("cartTotalPrice"),
     totalPrice = data.reduce((a, b) => a + parseInt(b.price) * b.count, 0);
 
   elCartList.innerHTML = "";
-  elCartCount.textContent = data?.length;
+  elsCartCount.forEach(el => (el.textContent = data?.length));
   elTotalPrice.textContent = totalPrice + "₽";
 
   data.forEach(item => {
