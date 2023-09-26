@@ -1,6 +1,5 @@
 // elements
-const elLoader = document.getElementById("loader"),
-  elCategories = document.getElementById("categories"),
+const elCategories = document.getElementById("categories"),
   elMenu = document.getElementById("menu"),
   elMenuTitle = document.getElementById("menuTitle");
 
@@ -169,13 +168,3 @@ document.addEventListener("change", e => {
   changeDeliveryRadio(e);
   changeTakeAwayRadio(e);
 });
-
-// disable loader
-setTimeout(() => {
-  elLoader.classList.add("not-visible");
-
-  setTimeout(() => {
-    elLoader.classList.remove("not-visible");
-    elLoader.classList.add("hidden");
-  }, 500);
-}, 1000);
