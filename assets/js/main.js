@@ -95,7 +95,12 @@ const onCartDelClick = e => {
   const dataset = el.parentElement.dataset;
   const id = dataset.cartCount;
 
+  const products = data.menu[dataset.typeCart];
+  const product = products.find(item => item.id === id);
+
+  product.count = 0;
   const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+
   const idx = localData.findIndex(item => item.id === id);
   localData.splice(idx, 1);
 
