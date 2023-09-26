@@ -11,6 +11,7 @@ const onAddModalOpenClick = e => {
 
   renderAddModal(product);
   elModal.classList.add("modal--show");
+  document.body.classList.add("hidden")
 };
 
 // onAddModalCloseClick
@@ -18,6 +19,7 @@ const onModalCloseClick = e => {
   const el = e.target.closest("[data-modal-close]");
   if (!el) return;
   elModal.classList.remove("modal--show");
+  document.body.classList.remove("hidden");
 };
 
 // onAddModalOutSideCloseClick
@@ -26,6 +28,7 @@ const onModalOutSideCloseClick = e => {
   if (!el.matches("#modal")) return;
 
   elModal.classList.remove("modal--show");
+  document.body.classList.remove("hidden");
 };
 
 // countIncClick

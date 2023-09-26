@@ -45,6 +45,7 @@ const onToggleToCartClick = e => {
 
   if (elModal.classList.contains("modal--show")) {
     elModal.classList.remove("modal--show");
+    document.body.classList.remove("hidden");
   }
 };
 
