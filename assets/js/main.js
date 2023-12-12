@@ -5,7 +5,9 @@ const elCategories = document.getElementById("categories"),
 
 // variables
 const selectedCategory = myLocalStorage.get("category") || "burgers";
-const selectedIndex = data.categories.findIndex(item => item.data === selectedCategory);
+const selectedIndex = data.categories.findIndex(
+  item => item.data === selectedCategory
+);
 
 // onCategoryClick
 const onCategoryClick = e => {
@@ -27,7 +29,9 @@ const onToggleToCartClick = e => {
   const category = data.menu[element.dataset.addCart];
   const selectedProduct = category.find(item => item.id === element.dataset.id);
 
-  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+  const localData = !!myLocalStorage.get("cart")
+    ? [...myLocalStorage.get("cart")]
+    : [];
   const isExist = localData.findIndex(item => item.id === selectedProduct.id);
 
   if (isExist < 0) {
@@ -54,7 +58,9 @@ const onCountIncClick = e => {
   if (!el) return;
 
   const id = el.parentElement.dataset.cartCount;
-  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+  const localData = !!myLocalStorage.get("cart")
+    ? [...myLocalStorage.get("cart")]
+    : [];
 
   const product = localData.find(item => item.id === id) || {};
   product.count += 1;
@@ -69,7 +75,9 @@ const onCountDecClick = e => {
   if (!el) return;
 
   const id = el.parentElement.dataset.cartCount;
-  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+  const localData = !!myLocalStorage.get("cart")
+    ? [...myLocalStorage.get("cart")]
+    : [];
 
   const product = localData.find(item => item.id === id);
   const idx = localData.findIndex(item => item.id === id);
@@ -98,7 +106,9 @@ const onCartDelClick = e => {
   const product = products.find(item => item.id === id);
 
   product.count = 0;
-  const localData = !!myLocalStorage.get("cart") ? [...myLocalStorage.get("cart")] : [];
+  const localData = !!myLocalStorage.get("cart")
+    ? [...myLocalStorage.get("cart")]
+    : [];
 
   const idx = localData.findIndex(item => item.id === id);
   localData.splice(idx, 1);
@@ -114,7 +124,9 @@ const changeDeliveryRadio = e => {
   if (!el) return;
 
   document.getElementById("addresWrapperOrder").classList.add("hidden");
-  document.getElementById("deliveryLabel").classList.add("delivery-modal__label--bottom");
+  document
+    .getElementById("deliveryLabel")
+    .classList.add("delivery-modal__label--bottom");
 };
 
 // changeTakeAwayRadio
@@ -123,7 +135,9 @@ const changeTakeAwayRadio = e => {
   if (!el) return;
 
   document.getElementById("addresWrapperOrder").classList.remove("hidden");
-  document.getElementById("deliveryLabel").classList.remove("delivery-modal__label--bottom");
+  document
+    .getElementById("deliveryLabel")
+    .classList.remove("delivery-modal__label--bottom");
 };
 
 // called functions
