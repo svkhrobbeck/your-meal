@@ -17,8 +17,7 @@ html {
 }
 
 *:focus {
-  outline: 2px dashed var(--text-color);
-  outline-offset: 3px;
+  outline: none;
 }
 
 ul {
@@ -45,7 +44,6 @@ body {
   }
 }
 
-// VISUALLY HIDDEN
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -59,7 +57,6 @@ body {
   overflow: hidden;
 }
 
-// MAIN CONTENT
-.main-content {
+.main {
   flex-grow: 1;
 }

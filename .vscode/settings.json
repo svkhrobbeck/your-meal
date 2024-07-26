@@ -8,7 +8,8 @@
     {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "/assets/css"
+      "savePath": "/assets/css",
+      "generateMap": false
     }
   ]
 }
